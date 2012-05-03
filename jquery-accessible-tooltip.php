@@ -3,9 +3,9 @@
 Plugin Name: JQuery Accessible Tooltip
 Plugin URI: http://wordpress.org/extend/plugins/jquery-accessible-tooltip/
 Description: WAI-ARIA Enabled Tooltip Plugin for Wordpress
-Author: Theofanis Oikonomou, Kontotasiou Dionysia
-Version: 2.0
-Author URI: http://www.iti.gr/iti/people/ThOikon.html, http://www.iti.gr/iti/people/Dionisia_Kontotasiou.html
+Author: Kontotasiou Dionysia
+Version: 3.0
+Author URI: http://www.iti.gr/iti/people/Dionisia_Kontotasiou.html
 */
 // include_once 'getRecentPosts.php';
 // include_once 'getRecentComments.php';
@@ -22,8 +22,8 @@ function JQueryAccessibleTooltip_init() {
         wp_deregister_script('jquery');
 
         // add your own script
-        wp_register_script('jquery-1.4.2', ( get_bloginfo('wpurl') . '/wp-content/plugins/jquery-accessible-tooltip/lib/jquery-ui/jquery-1.4.2.js'));
-        wp_enqueue_script('jquery-1.4.2');
+        wp_register_script('jquery-1.6.4', ( get_bloginfo('wpurl') . '/wp-content/plugins/jquery-accessible-tooltip/lib/jquery-ui/jquery-1.6.4.js'));
+        wp_enqueue_script('jquery-1.6.4');
 
         wp_register_script('jquery.ui.core.js', ( get_bloginfo('wpurl') . '/wp-content/plugins/jquery-accessible-tooltip/lib/jquery-ui/ui/jquery.ui.core.js'));
         wp_enqueue_script('jquery.ui.core.js');
@@ -90,7 +90,7 @@ function JQueryAccessibleTooltipContent() {
     echo '<!--<div class="demo" role="application">-->
 	<form action="" id="searchform" method="get" role="search">
 		<div class="widget_search" id="searchformJQueryAccessibleTooltip">
-			<label for="s" class="screen-reader-text">Search for:</label>
+			<label for="s" class="screen-reader-text">Search:</label>
 			<input type="text" id="s" name="s" value="" title="' . $options['tooltip'] . '">
 			<input type="submit" value="Search" id="searchsubmit" title="' . $options['search'] . '">
 		</div>
